@@ -27,6 +27,8 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     if(mode != 0){
+        
+        //Search for intersections
         ofSetColor(220,0,0);
         std::vector<ofPolyline> outline = shapes.getOutline();
         for(ofPolyline line : outline){
@@ -41,6 +43,8 @@ void ofApp::draw(){
                 iterator = next(iterator,1);
             }
         }
+        
+        //draw shapes
         ofSetColor(255);
         shapes.draw();
         ofSetColor(10);
